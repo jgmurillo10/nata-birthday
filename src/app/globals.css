@@ -85,11 +85,11 @@ body {
 .card__bottom { color: #fff; position: absolute; top: 50%; left: 0; border-top: solid 1px #000; background: #393939; border-radius: 0 0 0.12em 0.12em; pointer-events: none; overflow: hidden; }
 .card__bottom::after { display: block; margin-top: -0.6em; }
 .card__back::before, .card__bottom::after { content: attr(data-value); }
-.card__back { position: absolute; top: 0; height: 100%; left: 0; pointer-events: none; }
-.card__back::before { position: relative; z-index: -1; overflow: hidden; }
+.card__back { position: absolute; top: 0; left: 0; height: 100%; width: 1.4em; pointer-events: none; }
+.card__back::before { position: absolute; top: 0; left: 0; z-index: 2; overflow: hidden; width: 1.4em; height: 0.6em; }
 
-.flip .card__back::before { animation: flipTop 0.3s cubic-bezier(.37,.01,.94,.35); animation-fill-mode: both; transform-origin: center bottom; }
-.flip .card__back .card__bottom { transform-origin: center top; animation-fill-mode: both; animation: flipBottom 0.6s cubic-bezier(.15,.45,.28,1); }
+.flip .card__back::before { animation: flipTop 0.45s cubic-bezier(.37,.01,.94,.35); animation-fill-mode: both; transform-origin: center bottom; }
+.flip .card__back .card__bottom { transform-origin: center top; animation-fill-mode: both; animation: flipBottom 0.45s cubic-bezier(.15,.45,.28,1); }
 
 @keyframes flipTop { 0% { transform: rotateX(0deg); z-index: 2; } 0%,99%{ opacity: .99 } 100% { transform: rotateX(-90deg); opacity: 0; } }
 @keyframes flipBottom { 0%,50%{ z-index:-1; transform: rotateX(90deg); opacity:0 } 51%{ opacity:.99 } 100%{ opacity:.99; transform: rotateX(0deg); z-index:5 } }

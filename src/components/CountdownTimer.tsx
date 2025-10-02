@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 
 interface TimeLeft {
   days: number;
@@ -15,32 +15,49 @@ function two(n: number) {
 
 function Piece({ label, value }: { label: string; value: number }) {
   const initial = two(value);
-  const [display, setDisplay] = useState<string>(initial);
+  const [curr, setCurr] = useState<string>(initial);
   const [prev, setPrev] = useState<string>(initial);
-  const [next, setNext] = useState<string>(initial);
   const [flip, setFlip] = useState<boolean>(false);
+  const ref = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
     const n = two(value);
-    if (n !== display) {
-      setPrev(display);
-      setNext(n);
-      setFlip(true);
-      const t = setTimeout(() => {
-        setDisplay(n);
+    if (n !== curr) {
+      setPrev(curr);
+      setCurr(n);
+      // control class directly to guarantee animation restart
+      const node = ref.current;
+      if (node) {
+        node.classList.remove("flip");
+        // force reflow
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        node.offsetWidth;
+        node.classList.add("flip");
+        const t = setTimeout(() => node.classList.remove("flip"), 650);
+        return () => clearTimeout(t);
+      } else {
+        // fallback state toggle
         setFlip(false);
-      }, 650);
-      return () => clearTimeout(t);
+        const raf = requestAnimationFrame(() => setFlip(true));
+        const t = setTimeout(() => setFlip(false), 650);
+        return () => {
+          cancelAnimationFrame(raf);
+          clearTimeout(t);
+        };
+      }
     }
-  }, [value, display]);
+  }, [value, curr]);
 
   return (
-    <span className={`flip-clock__piece ${flip ? "flip" : ""}`}>
+    <span ref={ref} className={`flip-clock__piece ${flip ? "flip" : ""}`}>
       <b className="flip-clock__card card">
-        <b className="card__top">{display}</b>
-        <b className="card__bottom" data-value={display} />
+        {/* top shows current instantly */}
+        <b className="card__top">{curr}</b>
+        {/* bottom shows previous value during flip */}
+        <b className="card__bottom" data-value={prev} />
+        {/* back: before uses prev, inner bottom uses curr for incoming half */}
         <b className="card__back" data-value={prev}>
-          <b className="card__bottom" data-value={next} />
+          <b className="card__bottom" data-value={curr} />
         </b>
       </b>
       <span className="flip-clock__slot">{label}</span>
