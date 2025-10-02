@@ -72,7 +72,7 @@ function InvitationContent() {
               <div className="flex justify-between items-start mb-8">
                 <div>
                   <p className="text-sm uppercase tracking-wide font-semibold opacity-80">
-                    Pasajero
+                    Pasajero(s)
                   </p>
                   <p className="text-2xl font-bold">
                     {guest?.name || "Invitado Especial"}
@@ -85,6 +85,7 @@ function InvitationContent() {
                   <p className="text-2xl font-bold">VL30</p>
                 </div>
               </div>
+              {/* <hr className="border-amber-300 my-4" /> */}
 
               {/* Flight Details */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -93,9 +94,9 @@ function InvitationContent() {
                     Origen
                   </p>
                   <p className="text-2xl md:text-3xl font-extrabold leading-tight">
-                    Tu Casa
+                    BOG
                   </p>
-                  <p className="text-sm text-amber-600">Donde estés</p>
+                  {/* <p className="text-sm text-amber-600">Donde estés</p> */}
                 </div>
                 <div className="text-center flex flex-col items-center justify-center">
                   {/* Dotted trail + plane */}
@@ -142,9 +143,9 @@ function InvitationContent() {
                     Destino
                   </p>
                   <p className="text-2xl md:text-3xl font-extrabold leading-tight">
-                    Casua Malúa
+                    TOC
                   </p>
-                  <p className="text-sm text-amber-600">Tocaima</p>
+                  {/* <p className="text-sm text-amber-600">Tocaima</p> */}
                 </div>
               </div>
 
@@ -173,7 +174,8 @@ function InvitationContent() {
                   🎉 ¡Celebro mis 30!
                 </h2>
                 <p className="text-amber-700 text-lg font-medium mb-1">
-                  Te invito a compartir este día especial
+                  Este es un boarding pass para celebrar mi cumpleaños número
+                  30.
                 </p>
               </div>
             </div>
@@ -215,11 +217,11 @@ function InvitationContent() {
             </div> */}
 
             {/* Bottom Section */}
-            <div className="bg-gradient-to-r from-amber-100 to-orange-100 p-8 pt-12">
+            <div className="bg-gradient-to-r from-amber-100 to-orange-100 pt-12 pb-8">
               {/* Countdown */}
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-amber-900 mb-4">
-                  ⏰ Tiempo para el Vuelo
+                  Abordando dentro de:
                 </h3>
                 <CountdownTimer />
               </div>
@@ -230,7 +232,7 @@ function InvitationContent() {
               </div>
 
               {/* Dress Code */}
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-amber-200">
+              <div className="bg-white backdrop-blur-sm p-6 mb-8 border pb-8 border-amber-200">
                 <div className="text-center">
                   <h3 className="text-xl font-bold text-amber-900 mb-2">
                     👕 Dress Code
