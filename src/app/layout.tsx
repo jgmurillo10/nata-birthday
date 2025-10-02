@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     description:
       "Te invito a celebrar mi cumpleaños número 30. ¡Aborda el Vuelo 30!",
   },
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
