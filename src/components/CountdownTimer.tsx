@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from "react";
 
 interface TimeLeft {
   days: number;
@@ -9,52 +9,83 @@ interface TimeLeft {
   seconds: number;
 }
 
-export default function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+function two(n: number) {
+  return ("0" + n).slice(-2);
+}
+
+function Piece({ label, value }: { label: string; value: number }) {
+  const initial = two(value);
+  const [display, setDisplay] = useState<string>(initial);
+  const [prev, setPrev] = useState<string>(initial);
+  const [next, setNext] = useState<string>(initial);
+  const [flip, setFlip] = useState<boolean>(false);
 
   useEffect(() => {
-    const targetDate = new Date('2025-10-25T15:00:00-05:00'); // 3:00 PM UTC-5 Bogotá
-
-    const calculateTimeLeft = () => {
-      const now = new Date();
-      const difference = targetDate.getTime() - now.getTime();
-
-      if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-        setTimeLeft({ days, hours, minutes, seconds });
-      } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      }
-    };
-
-    calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
+    const n = two(value);
+    if (n !== display) {
+      setPrev(display);
+      setNext(n);
+      setFlip(true);
+      const t = setTimeout(() => {
+        setDisplay(n);
+        setFlip(false);
+      }, 650);
+      return () => clearTimeout(t);
+    }
+  }, [value, display]);
 
   return (
-    <div className="flex justify-center space-x-6 my-8">
-      <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-amber-100">
-        <div className="text-3xl font-bold text-amber-900">{timeLeft.days}</div>
-        <div className="text-sm text-amber-700 uppercase tracking-wide">Días</div>
-      </div>
-      <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-amber-100">
-        <div className="text-3xl font-bold text-amber-900">{timeLeft.hours}</div>
-        <div className="text-sm text-amber-700 uppercase tracking-wide">Horas</div>
-      </div>
-      <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-amber-100">
-        <div className="text-3xl font-bold text-amber-900">{timeLeft.minutes}</div>
-        <div className="text-sm text-amber-700 uppercase tracking-wide">Min</div>
-      </div>
-      <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-amber-100">
-        <div className="text-3xl font-bold text-amber-900">{timeLeft.seconds}</div>
-        <div className="text-sm text-amber-700 uppercase tracking-wide">Seg</div>
-      </div>
+    <span className={`flip-clock__piece ${flip ? "flip" : ""}`}>
+      <b className="flip-clock__card card">
+        <b className="card__top">{display}</b>
+        <b className="card__bottom" data-value={display} />
+        <b className="card__back" data-value={prev}>
+          <b className="card__bottom" data-value={next} />
+        </b>
+      </b>
+      <span className="flip-clock__slot">{label}</span>
+    </span>
+  );
+}
+
+export default function CountdownTimer() {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  const targetDate = useMemo(() => new Date("2025-10-25T15:00:00-05:00"), []);
+
+  useEffect(() => {
+    const calc = () => {
+      const now = new Date();
+      const diff = targetDate.getTime() - now.getTime();
+      if (diff <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+      const day = 24 * 60 * 60 * 1000;
+      const hour = 60 * 60 * 1000;
+      const minute = 60 * 1000;
+      const days = Math.floor(diff / day);
+      const hours = Math.floor((diff % day) / hour);
+      const minutes = Math.floor((diff % hour) / minute);
+      const seconds = Math.floor((diff % minute) / 1000);
+      setTimeLeft({ days, hours, minutes, seconds });
+    };
+    calc();
+    const id = setInterval(calc, 1000);
+    return () => clearInterval(id);
+  }, [targetDate]);
+
+  return (
+    <div className="flip-clock">
+      <Piece label="Días" value={timeLeft.days} />
+      <Piece label="Horas" value={timeLeft.hours} />
+      <Piece label="Minutos" value={timeLeft.minutes} />
+      <Piece label="Segundos" value={timeLeft.seconds} />
     </div>
   );
 }
