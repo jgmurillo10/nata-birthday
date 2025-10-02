@@ -169,7 +169,7 @@ function InvitationContent() {
               </div>
 
               {/* Special Occasion */}
-              <div className="text-center bg-gradient-to-r from-amber-100 to-orange-100 rounded-2xl p-6 mb-8">
+              <div className="text-center bg-gradient-to-r from-amber-100 to-orange-100 rounded-2xl p-6 mb-4">
                 <h2 className="text-3xl font-bold text-amber-900 mb-2">
                   🎉 ¡Celebro mis 30!
                 </h2>
@@ -192,6 +192,48 @@ function InvitationContent() {
                 <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full" />
               </div>
               <Barcode guestId={guestId || undefined} />
+              {/* Feel-good items allowed */}
+              <div className="backdrop-blur-sm rounded-2xl p-6 mb-8">
+                <div className="text-center mb-4">
+                  <h3 className="text-xl font-bold text-amber-900">
+                    🧳 Permitido a bordo
+                  </h3>
+                  <p className="text-amber-700 text-sm">
+                    En lugar de equipaje, trae solo cosas lindas
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <div className="flex items-center justify-center gap-2 bg-amber-50  rounded-xl py-3">
+                    <span className="text-2xl">✨</span>
+                    <span className="text-amber-900 font-semibold text-sm">
+                      Buena energía
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 bg-amber-50  rounded-xl py-3">
+                    <span className="text-2xl">😊</span>
+                    <span className="text-amber-900 font-semibold text-sm">
+                      Sonrisas
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 bg-amber-50  rounded-xl py-3">
+                    <span className="text-2xl">🤗</span>
+                    <span className="text-amber-900 font-semibold text-sm">
+                      Abrazos
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 bg-amber-50  rounded-xl py-3">
+                    <span className="text-2xl">💌</span>
+                    <span className="text-amber-900 font-semibold text-sm">
+                      Deseos lindos
+                    </span>
+                  </div>
+                </div>
+                <div className="text-center mt-4">
+                  <p className="text-amber-600 text-xs">
+                    No permitido: malas vibras 🚫
+                  </p>
+                </div>
+              </div>
               <div className="relative h-8" style={{ marginTop: -10 }}>
                 {/* dashed line */}
                 <div className="absolute inset-x-6 top-1/2 -translate-y-1/2 border-t border-dashed border-amber-300" />
@@ -231,11 +273,20 @@ function InvitationContent() {
                 <WhatsAppButton guest={guest} />
               </div>
 
+              <div className="relative h-8" style={{ marginTop: -10 }}>
+                {/* dashed line */}
+                <div className="absolute inset-x-6 top-1/2 -translate-y-1/2 border-t border-dashed border-amber-300" />
+                {/* left notch */}
+                <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full" />
+                {/* right notch */}
+                <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full" />
+              </div>
+
               {/* Dress Code */}
-              <div className="bg-white backdrop-blur-sm p-6 mb-8 border pb-8 border-amber-200">
+              <div className="backdrop-blur-sm p-6 mb-8 pb-8 ">
                 <div className="text-center">
                   <h3 className="text-xl font-bold text-amber-900 mb-2">
-                    👕 Dress Code
+                    Dress Code
                   </h3>
                   <p className="text-amber-800 text-lg">
                     Una prenda blanca en la parte superior
