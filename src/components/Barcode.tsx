@@ -32,7 +32,7 @@ export default function Barcode({ value, guestId }: BarcodeProps) {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       {/* Código de barras */}
-      <div className="bg-white w-full py-4">
+      <div className="w-full py-4">
         {/* Barras del código */}
         <div className="flex items-center justify-center h-24 gap-px overflow-hidden px-8">
           {pattern.map((width, idx) => (

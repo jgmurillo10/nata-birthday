@@ -47,11 +47,11 @@ function InvitationContent() {
       <BackgroundElements />
       {/* Boarding Pass Header */}
       <div className="relative overflow-hidden z-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-100/30 to-orange-100/30" />
+        <div className="absolute inset-0 bg-white" />
         <div className="relative max-w-4xl mx-auto px-6 py-12">
           {/* Flight Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center space-x-4 bg-white/80 backdrop-blur-md rounded-2xl px-8 py-4 shadow-xl border border-amber-200/50">
+            <div className="inline-flex items-center space-x-4 backdrop-blur-md rounded-2xl px-8 py-4 shadow-xl border border-amber-200/50">
               <div className="text-4xl">✈️</div>
               <div>
                 <h1 className="text-4xl font-bold text-amber-900 tracking-wide">
@@ -65,7 +65,7 @@ function InvitationContent() {
           </div>
 
           {/* Boarding Pass Content */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden">
+          <div className="backdrop-blur-sm rounded-3xl overflow-hidden">
             {/* Main Boarding Pass */}
             <div className="bg-gradient-to-r from-amber-100 to-orange-100 text-amber-900 p-8 rounded-t-3xl">
               {/* Passenger Info */}
@@ -179,21 +179,29 @@ function InvitationContent() {
             </div>
 
             {/* Barcode Section - Integrated with Perforated Edge */}
-            <div className="relative">
-              {/* Dots row at the beginning of the barcode section */}
-              <div
-                className="flex justify-center space-x-4 pt-1 mb-2"
-                style={{ marginTop: -10 }}
-              >
-                {Array.from({ length: 20 }).map((_, i) => (
-                  <div key={i} className="w-3 h-3 bg-white rounded-full" />
-                ))}
+            <div className="relative bg-gradient-to-r from-amber-100 to-orange-100">
+              {/* Ticket perforation: side notches + dashed divider */}
+              <div className="relative h-8 mb-2" style={{ marginTop: -10 }}>
+                {/* dashed line */}
+                <div className="absolute inset-x-6 top-1/2 -translate-y-1/2 border-t border-dashed border-amber-300" />
+                {/* left notch */}
+                <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full" />
+                {/* right notch */}
+                <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full" />
               </div>
               <Barcode guestId={guestId || undefined} />
+              <div className="relative h-8" style={{ marginTop: -10 }}>
+                {/* dashed line */}
+                <div className="absolute inset-x-6 top-1/2 -translate-y-1/2 border-t border-dashed border-amber-300" />
+                {/* left notch */}
+                <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full" />
+                {/* right notch */}
+                <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full" />
+              </div>
             </div>
 
             {/* Perforated Edge Effect */}
-            <div className="relative -mt-3">
+            {/* <div className="relative -mt-3">
               <div className="absolute inset-0 bg-gradient-to-r from-amber-100 to-orange-100 h-6">
                 <div
                   className="flex justify-center space-x-4 pt-1"
@@ -204,7 +212,7 @@ function InvitationContent() {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Bottom Section */}
             <div className="bg-gradient-to-r from-amber-100 to-orange-100 p-8 pt-12">
