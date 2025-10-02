@@ -1,9 +1,18 @@
 "use client";
 
 export default function GoogleMap() {
-  // Embed using the exact Google Maps Place link provided
-  const mapUrl =
-    "https://www.google.com/maps/place/Casa+Mal%C3%BAa/@4.4584032,-74.6414852,17z/data=!3m1!4b1!4m12!1m5!8m4!1e4!2s109368321504705025448!3m1!1e1!3m5!1s0x8e3f3d0018007c2b:0x2bc5f8dab499d5c4!8m2!3d4.4584032!4d-74.6389103!16s%2Fg%2F11y0cyfjwh?entry=ttu&output=embed";
+  // Prefer Google Maps Embed API when an API key is available (supports place/search)
+  // Fallback to coordinates embed to avoid X-Frame-Options errors from place pages
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_API_KEY;
+  const placeQuery = "Casa Malúa, Cl. 4 # 13-30, Tocaima, Cundinamarca";
+  const lat = 4.4584032;
+  const lng = -74.6389103;
+
+  const mapUrl = apiKey
+    ? `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodeURIComponent(
+        placeQuery
+      )}&zoom=17`
+    : `https://maps.google.com/maps?q=${lat},${lng}&z=17&hl=es&output=embed`;
 
   return (
     <div className="w-full h-80 rounded-xl overflow-hidden shadow-lg border-2 border-amber-100">
