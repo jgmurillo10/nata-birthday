@@ -293,7 +293,7 @@ function InvitationContent() {
               <div className="backdrop-blur-sm p-6 mb-8 pb-8 ">
                 <div className="text-center">
                   <h3 className="text-xl font-bold text-amber-900 mb-2">
-                    Dress Code
+                    Código de vestuario
                   </h3>
                   <p className="text-amber-800 text-lg">
                     Una prenda blanca en la parte superior.
