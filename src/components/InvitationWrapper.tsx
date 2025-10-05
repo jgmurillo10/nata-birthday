@@ -55,7 +55,7 @@ function InvitationContent() {
               <div className="text-4xl">✈️</div>
               <div>
                 <h1 className="text-4xl font-bold text-amber-900 tracking-wide">
-                  VUELO 30
+                  VUELO 30 • Natalia Pérez
                 </h1>
                 <p className="text-amber-700 text-sm uppercase tracking-widest">
                   Boarding Pass
@@ -233,8 +233,8 @@ function InvitationContent() {
                 </div>
                 <div className="text-center mt-4">
                   <p className="text-amber-600 text-xs">
-                    * Puedes llevar una foto tuya del pasado, puede ser en el
-                    celular.
+                    * Puedes llevar una foto de cuando eras pequeño, puede ser
+                    en el celular.
                   </p>
                   <p className="text-amber-600 text-xs">
                     No permitido: malas vibras 🚫
@@ -312,7 +312,7 @@ function InvitationContent() {
                 <GoogleMap />
                 <div className="text-center mt-4">
                   <p className="text-amber-900 text-lg font-semibold">
-                    Casa Malúa
+                    Malúa Casa Boutique
                   </p>
                   <p className="text-amber-700">
                     Cl. 4 # 13-30, Tocaima, Cundinamarca
@@ -347,7 +347,7 @@ function InvitationContent() {
                 <p>
                   ¡Espero verte ahí para compartir este momento especial! ✨
                 </p>
-                <p className="mt-2"> • Vuelo 30 • </p>
+                <p className="mt-2"> Vuelo 30 • Natalia Pérez</p>
               </div>
             </div>
           </div>
