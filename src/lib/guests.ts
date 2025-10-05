@@ -125,6 +125,18 @@ export const guests: Record<string, Guest> = {
     name: "Sebastian López",
     whatsappMessage: "Hola Natalia, Sebastian López confirmo asistencia",
   },
+  "6ba7b830-9dad-11d1-80b4-00c04fd430c8": {
+    id: "6ba7b830-9dad-11d1-80b4-00c04fd430c8",
+    name: "David Medina & Sol Castro",
+    whatsappMessage:
+      "Hola Natalia, David Medina & Sol Castro confirmamos asistencia",
+  },
+  "6ba7b831-9dad-11d1-80b4-00c04fd430c8": {
+    id: "6ba7b831-9dad-11d1-80b4-00c04fd430c8",
+    name: "Familia Marentes Aponte",
+    whatsappMessage:
+      "Hola Natalia, Familia Marentes Aponte confirmamos asistencia",
+  },
 };
 
 export function getGuestById(id: string): Guest | null {
