@@ -20,6 +20,23 @@ export const metadata: Metadata = {
     title: "Vuelo 30 - Cumpleaños de Natalia Pérez",
     description:
       "Te invito a celebrar mi cumpleaños número 30. ¡Aborda el Vuelo 30!",
+    type: "website",
+    locale: "es_CO",
+    images: [
+      {
+        url: "/meta.png",
+        width: 1200,
+        height: 630,
+        alt: "Vuelo 30 - Cumpleaños de Natalia Pérez",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vuelo 30 - Cumpleaños de Natalia Pérez",
+    description:
+      "Te invito a celebrar mi cumpleaños número 30. ¡Aborda el Vuelo 30!",
+    images: ["/meta.png"],
   },
   icons: {
     icon: "/icon.svg",
