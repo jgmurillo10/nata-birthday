@@ -164,7 +164,7 @@ function InvitationContent() {
                     Hora de llegada
                   </p>
                   <p className="text-lg font-bold text-amber-900">3:00 PM</p>
-                  <p className="text-sm text-amber-600">UTC-5 (Bogotá)</p>
+                  {/* <p className="text-sm text-amber-600">UTC-5 (Bogotá)</p> */}
                 </div>
               </div>
 
