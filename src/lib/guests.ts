@@ -47,6 +47,45 @@ export const guests: Record<string, Guest> = {
     whatsappMessage:
       "Hola Natalia, Familia Castiblanco Coudrain confirmamos asistencia",
   },
+  "6ba7b816-9dad-11d1-80b4-00c04fd430c8": {
+    id: "6ba7b816-9dad-11d1-80b4-00c04fd430c8",
+    name: "Familia López Clavijo",
+    whatsappMessage:
+      "Hola Natalia, Familia López Clavijo confirmamos asistencia",
+  },
+  "6ba7b817-9dad-11d1-80b4-00c04fd430c8": {
+    id: "6ba7b817-9dad-11d1-80b4-00c04fd430c8",
+    name: "Familia Hernández Ayala",
+    whatsappMessage:
+      "Hola Natalia, Familia Hernández Ayala confirmamos asistencia",
+  },
+  "6ba7b818-9dad-11d1-80b4-00c04fd430c8": {
+    id: "6ba7b818-9dad-11d1-80b4-00c04fd430c8",
+    name: "Familia Murillo Reyes",
+    whatsappMessage:
+      "Hola Natalia, Familia Murillo Reyes confirmamos asistencia",
+  },
+  "6ba7b819-9dad-11d1-80b4-00c04fd430c8": {
+    id: "6ba7b819-9dad-11d1-80b4-00c04fd430c8",
+    name: "Familia Murillo Martínez",
+    whatsappMessage:
+      "Hola Natalia, Familia Murillo Martínez confirmamos asistencia",
+  },
+  "6ba7b820-9dad-11d1-80b4-00c04fd430c8": {
+    id: "6ba7b820-9dad-11d1-80b4-00c04fd430c8",
+    name: "Laura Puentes",
+    whatsappMessage: "Hola Natalia, Laura Puentes confirmo asistencia",
+  },
+  "6ba7b821-9dad-11d1-80b4-00c04fd430c8": {
+    id: "6ba7b821-9dad-11d1-80b4-00c04fd430c8",
+    name: "Daniela Tovar",
+    whatsappMessage: "Hola Natalia, Daniela Tovar confirmo asistencia",
+  },
+  "6ba7b822-9dad-11d1-80b4-00c04fd430c8": {
+    id: "6ba7b822-9dad-11d1-80b4-00c04fd430c8",
+    name: "Max Murillo",
+    whatsappMessage: "Hola Natalia, Max Murillo confirmo asistencia",
+  },
 };
 
 export function getGuestById(id: string): Guest | null {
