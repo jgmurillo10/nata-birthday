@@ -180,6 +180,12 @@ export const guests: Record<string, Guest> = {
     whatsappMessage:
       "Hola Natalia, Familia Mancera Luján confirmamos asistencia",
   },
+  "6ba7b840-9dad-11d1-80b4-00c04fd430c8": {
+    id: "6ba7b840-9dad-11d1-80b4-00c04fd430c8",
+    name: "Jorge Aldana & Familia",
+    whatsappMessage:
+      "Hola Natalia, Jorge Aldana & Familia confirmamos asistencia",
+  },
 };
 
 export function getGuestById(id: string): Guest | null {
