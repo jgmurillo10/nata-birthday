@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nata-birthday.vercel.app"),
   title: "Vuelo 30 - Cumpleaños de Natalia Pérez",
   description:
     "Te invito a celebrar mi cumpleaños número 30. Aborda el Vuelo 30 y compartamos juntos un día especial en Casua Malúa, Tocaima.",
