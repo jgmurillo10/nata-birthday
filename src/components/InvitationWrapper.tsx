@@ -32,9 +32,9 @@ function InvitationContent() {
       const hours = Math.floor((diffMs % d) / h);
       const mins = Math.floor((diffMs % h) / m);
       const parts: string[] = [];
-      if (days) parts.push(`${days}d`);
-      if (hours) parts.push(`${hours}h`);
-      if (!days && hours < 6 && mins) parts.push(`${mins}m`);
+      if (days) parts.push(`${days} días`);
+      if (hours) parts.push(`${hours} horas`);
+      if (!days && hours < 6 && mins) parts.push(`${mins} minutos`);
       setFriendlyRemaining(parts.slice(0, 2).join(" ") || "<1m");
     };
     update();
