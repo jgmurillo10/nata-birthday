@@ -94,7 +94,7 @@ function InvitationContent() {
                     Origen
                   </p>
                   <p className="text-2xl md:text-3xl font-extrabold leading-tight">
-                    🏠
+                    TU CASA 🏠
                   </p>
                   {/* <p className="text-sm text-amber-600">Donde estés</p> */}
                 </div>
