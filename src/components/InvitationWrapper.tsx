@@ -227,11 +227,15 @@ function InvitationContent() {
                   <div className="flex items-center justify-center gap-2 bg-amber-50  rounded-xl py-3">
                     <span className="text-2xl">📷</span>
                     <span className="text-amber-900 font-semibold text-sm">
-                      Foto tuya del pasado
+                      Foto tuya del pasado*
                     </span>
                   </div>
                 </div>
                 <div className="text-center mt-4">
+                  <p className="text-amber-600 text-xs">
+                    * Puedes llevar una foto tuya del pasado, puede ser en el
+                    celular.
+                  </p>
                   <p className="text-amber-600 text-xs">
                     No permitido: malas vibras 🚫
                   </p>
