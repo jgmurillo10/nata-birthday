@@ -15,7 +15,7 @@ export default function GoogleMap() {
     : `https://maps.google.com/maps?q=${lat},${lng}&z=17&hl=es&output=embed`;
 
   return (
-    <div className="w-full h-80  overflow-hidden shadow-lg border-2 border-amber-100">
+    <div className="w-full h-80  overflow-hidden border-2 border-amber-100">
       <iframe
         src={mapUrl}
         width="100%"

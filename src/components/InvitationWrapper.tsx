@@ -48,7 +48,7 @@ function InvitationContent() {
       {/* Boarding Pass Header */}
       <div className="relative overflow-hidden z-10">
         <div className="absolute inset-0 bg-white" />
-        <div className="relative max-w-4xl mx-auto px-6 py-12">
+        <div className="relative max-w-4xl mx-auto px-6 py-16">
           {/* Flight Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center space-x-4 backdrop-blur-md rounded-2xl px-8 py-4 shadow-xl border border-amber-200/50">
@@ -94,7 +94,7 @@ function InvitationContent() {
                     Origen
                   </p>
                   <p className="text-2xl md:text-3xl font-extrabold leading-tight">
-                    BOG
+                    🏠
                   </p>
                   {/* <p className="text-sm text-amber-600">Donde estés</p> */}
                 </div>
@@ -143,7 +143,7 @@ function InvitationContent() {
                     Destino
                   </p>
                   <p className="text-2xl md:text-3xl font-extrabold leading-tight">
-                    TOC
+                    TOCAIMA
                   </p>
                   {/* <p className="text-sm text-amber-600">Tocaima</p> */}
                 </div>
@@ -153,7 +153,7 @@ function InvitationContent() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="text-left">
                   <p className="text-sm text-amber-700 uppercase tracking-wide font-medium">
-                    Fecha de Salida
+                    Fecha de llegada
                   </p>
                   <p className="text-lg font-bold text-amber-900">
                     25 Octubre 2025
@@ -161,7 +161,7 @@ function InvitationContent() {
                 </div>
                 <div className="text-left md:text-right">
                   <p className="text-sm text-amber-700 uppercase tracking-wide font-medium">
-                    Hora
+                    Hora de llegada
                   </p>
                   <p className="text-lg font-bold text-amber-900">3:00 PM</p>
                   <p className="text-sm text-amber-600">UTC-5 (Bogotá)</p>
@@ -169,13 +169,13 @@ function InvitationContent() {
               </div>
 
               {/* Special Occasion */}
-              <div className="text-center bg-gradient-to-r from-amber-100 to-orange-100 rounded-2xl p-6 mb-4">
+              <div className="text-center bg-gradient-to-r from-amber-100 to-orange-100 rounded-2xl mb-4">
                 <h2 className="text-3xl font-bold text-amber-900 mb-2">
-                  🎉 ¡Celebro mis 30!
+                  🎉 ¡Acompáñame a celebrar mi cumpleaños #30!
                 </h2>
                 <p className="text-amber-700 text-lg font-medium mb-1">
-                  Este es un boarding pass para celebrar mi cumpleaños número
-                  30.
+                  Este es un boarding pass para celebrar la vida, los sueños y
+                  los nuevos comienzos.
                 </p>
               </div>
             </div>
@@ -196,11 +196,8 @@ function InvitationContent() {
               <div className="backdrop-blur-sm rounded-2xl p-6 mb-8">
                 <div className="text-center mb-4">
                   <h3 className="text-xl font-bold text-amber-900">
-                    🧳 Permitido a bordo
+                    🧳 Tu equipaje para este viaje especial
                   </h3>
-                  <p className="text-amber-700 text-sm">
-                    En lugar de equipaje, trae solo cosas lindas
-                  </p>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   <div className="flex items-center justify-center gap-2 bg-amber-50  rounded-xl py-3">
@@ -215,16 +212,22 @@ function InvitationContent() {
                       Sonrisas
                     </span>
                   </div>
-                  <div className="flex items-center justify-center gap-2 bg-amber-50  rounded-xl py-3">
+                  {/* <div className="flex items-center justify-center gap-2 bg-amber-50  rounded-xl py-3">
                     <span className="text-2xl">🤗</span>
                     <span className="text-amber-900 font-semibold text-sm">
                       Abrazos
                     </span>
-                  </div>
+                  </div> */}
                   <div className="flex items-center justify-center gap-2 bg-amber-50  rounded-xl py-3">
                     <span className="text-2xl">💌</span>
                     <span className="text-amber-900 font-semibold text-sm">
-                      Deseos lindos
+                      Lindos deseos
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 bg-amber-50  rounded-xl py-3">
+                    <span className="text-2xl">📷</span>
+                    <span className="text-amber-900 font-semibold text-sm">
+                      Foto tuya del pasado
                     </span>
                   </div>
                 </div>
@@ -289,11 +292,11 @@ function InvitationContent() {
                     Dress Code
                   </h3>
                   <p className="text-amber-800 text-lg">
-                    Una prenda blanca en la parte superior
+                    Una prenda blanca en la parte superior.
                   </p>
-                  <p className="text-amber-600 text-sm mt-1">
+                  {/* <p className="text-amber-600 text-sm mt-1">
                     ¡Vamos a brillar juntos!
-                  </p>
+                  </p> */}
                 </div>
               </div>
 
@@ -321,7 +324,21 @@ function InvitationContent() {
                 </div>
               </div>
 
+              <div className="relative h-8 mb-2" style={{ marginTop: -10 }}>
+                {/* dashed line */}
+                <div className="absolute inset-x-6 top-1/2 -translate-y-1/2 border-t border-dashed border-amber-300" />
+                {/* left notch */}
+                <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full" />
+                {/* right notch */}
+                <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full" />
+              </div>
+
               {/* Footer */}
+              <div>
+                <p className="text-amber-800 text-lg text-center mb-4">
+                  Cada destino es un recuerdo, cada escala es una emoción.
+                </p>
+              </div>
               <div className="text-center text-amber-600 text-sm">
                 <p>
                   ¡Espero verte ahí para compartir este momento especial! ✨
