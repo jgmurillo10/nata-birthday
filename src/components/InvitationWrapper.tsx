@@ -231,11 +231,11 @@ function InvitationContent() {
                     </span>
                   </div>
                 </div>
+                <p className="text-amber-600 text-xs m-4">
+                  * Trae una foto tuya de cuando eras niño(a), puede ser impresa
+                  o en el celular. Será parte de un momento muy especial.
+                </p>
                 <div className="text-center mt-4">
-                  <p className="text-amber-600 text-xs">
-                    * Puedes llevar una foto de cuando eras pequeño, puede ser
-                    en el celular.
-                  </p>
                   <p className="text-amber-600 text-xs">
                     No permitido: malas vibras 🚫
                   </p>
